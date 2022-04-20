@@ -1,0 +1,13 @@
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\Configure.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentInfo.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\web.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Description.txt
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\logo.jpg
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.pdb
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csproj.AssemblyReference.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csproj.CoreCompileInputs.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csproj.CopyComplete
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.pdb

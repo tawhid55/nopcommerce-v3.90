@@ -1,0 +1,16 @@
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Description.txt
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\web.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\Configure.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\_CreateOrUpdateRateByWeight.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\AddRateByWeightPopup.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\EditRateByWeightPopup.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\_ByWeight.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Views\_FixedRate.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\logo.jpg
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Nop.Plugin.Shipping.FixedOrByWeight.dll.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Nop.Plugin.Shipping.FixedOrByWeight.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Shipping.FixedOrByWeight\Nop.Plugin.Shipping.FixedOrByWeight.pdb
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Shipping.FixedOrByWeight\obj\Debug\Nop.Plugin.Shipping.FixedOrByWeight.csproj.App.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Shipping.FixedOrByWeight\obj\Debug\Nop.Plugin.Shipping.FixedOrByWeight.csproj.CoreCompileInputs.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Shipping.FixedOrByWeight\obj\Debug\Nop.Plugin.Shipping.FixedOrByWeight.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Shipping.FixedOrByWeight\obj\Debug\Nop.Plugin.Shipping.FixedOrByWeight.pdb

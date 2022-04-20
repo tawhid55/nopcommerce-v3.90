@@ -1,0 +1,12 @@
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\Configure.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\PaymentInfo.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\web.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Description.txt
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\logo.jpg
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.csproj.App.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.csproj.CoreCompileInputs.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.pdb
