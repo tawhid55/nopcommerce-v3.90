@@ -1,0 +1,74 @@
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Description.txt
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\ClientSettings.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Create.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\CreateOrUpdate.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Edit.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\List.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Settings.cshtml
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\web.config
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\logo.jpg
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll.config
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.XML
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll
+C:\Projects\Trajan\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.pdb
+C:\Projects\Trajan\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csprojAssemblyReference.cache
+C:\Projects\Trajan\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CoreCompileInputs.cache
+C:\Projects\Trajan\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CopyComplete
+C:\Projects\Trajan\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.dll
+C:\Projects\Trajan\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.pdb
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Description.txt
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\ClientSettings.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Create.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\CreateOrUpdate.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Edit.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\List.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Settings.cshtml
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\web.config
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\logo.jpg
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll.config
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.XML
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.pdb
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.App.config
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.AssemblyReference.cache
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CoreCompileInputs.cache
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.dll
+E:\Data\Dropbox\Dev\_Client_Work\Trajan\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.pdb
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Description.txt
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\ClientSettings.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Create.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\CreateOrUpdate.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Edit.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\List.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Settings.cshtml
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\web.config
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\logo.jpg
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll.config
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.XML
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.pdb
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.App.config
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.AssemblyReference.cache
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CopyComplete
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.dll
+C:\Users\Michael\Trajan\projects\TASNopCommercePhase1Complete\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.pdb
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Description.txt
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\ClientSettings.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Create.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\CreateOrUpdate.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\Edit.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Clients\List.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Views\Settings.cshtml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\web.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\logo.jpg
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.XML
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\Plugins\Nop.Plugin.Api\Nop.Plugin.Api.pdb
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.App.config
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.AssemblyReference.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CoreCompileInputs.cache
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.csproj.CopyComplete
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Plugins\Nop.Plugin.Api\obj\Debug\Nop.Plugin.Api.pdb

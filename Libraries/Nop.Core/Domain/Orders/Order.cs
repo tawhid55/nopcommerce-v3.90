@@ -81,6 +81,11 @@ namespace Nop.Core.Domain.Orders
         public int CustomerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the user identifier
+        /// </summary>
+        public string UserID { get; set; }
+
+        /// <summary>
         /// Gets or sets the OriginalSampleID
         /// </summary>
         public string OriginalSampleID { get; set; }

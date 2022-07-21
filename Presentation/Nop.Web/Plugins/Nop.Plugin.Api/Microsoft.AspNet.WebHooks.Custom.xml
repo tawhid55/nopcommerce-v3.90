@@ -1,0 +1,1076 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNet.WebHooks.Custom</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookManagerExtensions">
+            <summary>
+            Various extension methods for the ASP.NET Web API <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> interface.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManagerExtensions.NotifyAllAsync(Microsoft.AspNet.WebHooks.IWebHookManager,System.String,System.Object)">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="manager">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManagerExtensions.NotifyAllAsync(Microsoft.AspNet.WebHooks.IWebHookManager,System.String,System.Object,System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="manager">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <param name="predicate">A function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManagerExtensions.NotifyAllAsync(Microsoft.AspNet.WebHooks.IWebHookManager,Microsoft.AspNet.WebHooks.NotificationDictionary[])">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="manager">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> instance.</param>
+            <param name="notifications">The set of notifications to include in the WebHook.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookExtensions.MatchesAction(Microsoft.AspNet.WebHooks.WebHook,System.String)">
+            <summary>
+            Determines whether a given <paramref name="action"/> matches the filters for a given <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            The action can either match a filter directly or match a wildcard.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instance to operate on.</param>
+            <param name="action">The action to match against the <paramref name="webHook"/> filters.</param>
+            <returns><c>true</c> if the <paramref name="action"/> matches, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookExtensions.MatchesAnyAction(Microsoft.AspNet.WebHooks.WebHook,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether any of the given <paramref name="actions"/> match the filters for a given <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            The actions can either match a filter directly or match a wildcard.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instance to operate on.</param>
+            <param name="actions">The set of actions to match against the <paramref name="webHook"/> filters.</param>
+            <returns><c>true</c> if one or more of the <paramref name="actions"/> match, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.DependencyScopeExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> facilitating getting the services used by custom WebHooks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetStore(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> implementation registered with the Dependency Injection engine
+            or a default implementation if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> instance or a default implementation if none are registered.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetUser(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> implementation registered with the Dependency Injection engine
+            or a default implementation if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> instance or a default implementation if none are registered.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetFilterProviders(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets the set of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> instances registered with the Dependency Injection engine
+            or an empty collection if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing the registered instances.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetFilterManager(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> implementation registered with the Dependency Injection engine
+            or a default implementation if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> instance or a default implementation if none are registered.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetSender(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> implementation registered with the Dependency Injection engine
+            or a default implementation if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> instance or a default implementation if none are registered.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DependencyScopeExtensions.GetManager(System.Web.Http.Dependencies.IDependencyScope)">
+            <summary>
+            Gets an <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> implementation registered with the Dependency Injection engine
+            or a default implementation if none are registered.
+            </summary>
+            <param name="services">The <see cref="T:System.Web.Http.Dependencies.IDependencyScope"/> implementation.</param>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> instance or a default implementation if none are registered.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.Properties.CustomResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Filter_WildcardDescription">
+            <summary>
+              Looks up a localized string similar to Listen in on all events..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.FilterManager_FailureGettingFilters">
+            <summary>
+              Looks up a localized string similar to Could not resolve WebHook filters due to error: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_CompletionFailure">
+            <summary>
+              Looks up a localized string similar to Failure shutting down launchers: &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_GivingUp">
+            <summary>
+              Looks up a localized string similar to Giving up sending WebHook &apos;{0}&apos; after &apos;{1}&apos; attempts..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_InvalidHeader">
+            <summary>
+              Looks up a localized string similar to Could not add header field &apos;{0}&apos; to the WebHook request for WebHook ID &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_NoEcho">
+            <summary>
+              Looks up a localized string similar to The WebHook registrar requested no verification of WebHook URI..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_NoHttpUri">
+            <summary>
+              Looks up a localized string similar to The WebHook URI must be absolute with a scheme of either &apos;http&apos; or &apos;https&apos; but received &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_NoUser">
+            <summary>
+              Looks up a localized string similar to Could not determine the user ID from the given principal..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_Result">
+            <summary>
+              Looks up a localized string similar to WebHook &apos;{0}&apos; resulted in status code &apos;{1}&apos; on attempt &apos;{2}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_Started">
+            <summary>
+              Looks up a localized string similar to Configuring &apos;{0}&apos; with a total of {1} attempt(s) of sending WebHooks..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_VerifyBadEcho">
+            <summary>
+              Looks up a localized string similar to The HTTP request echo query parameter was not returned as plain text in the response. Please return the echo parameter to verify that the WebHook is working as expected..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_VerifyFailure">
+            <summary>
+              Looks up a localized string similar to WebHook verification failed. Please ensure that the WebHook URI is valid and that the endpoint is accessible. Error encountered: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_VerifyNoBody">
+            <summary>
+              Looks up a localized string similar to The WebHook URI did not return the expected echo query parameter value in a plain text response body. This is necessary to ensure that the WebHook is connected correctly..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Manager_WebHookFailure">
+            <summary>
+              Looks up a localized string similar to Failed to submit attempt {0} of WebHook {1} due to failure: {2}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Notification_KeyNotFound">
+            <summary>
+              Looks up a localized string similar to No Notification setting was found with key &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.Sender_BadWorkItem">
+            <summary>
+              Looks up a localized string similar to Invalid &apos;{0}&apos; instance: &apos;{1}&apos; cannot be null..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.Properties.CustomResources.WebHook_InvalidSecret">
+            <summary>
+              Looks up a localized string similar to The WebHook secret key parameter must be between 32 and 64 characters long..
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.Services.CustomServices">
+            <summary>
+            Provides singleton instances of custom WebHook services such as a default
+            <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> implementation, <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> etc.
+            If alternative implementations are provided by a Dependency Injection engine then
+            those instances are used instead.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetStore">
+            <summary>
+            Gets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <returns>A default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.SetStore(Microsoft.AspNet.WebHooks.IWebHookStore)">
+            <summary>
+            Sets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <param name="instance">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> to use. If <c>null</c> then a default implementation is used.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetUser">
+            <summary>
+            Gets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <returns>A default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.SetUser(Microsoft.AspNet.WebHooks.IWebHookUser)">
+            <summary>
+            Sets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <param name="instance">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> to use. If <c>null</c> then a default implementation is used.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetFilterProviders">
+            <summary>
+            Gets the set of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> instances discovered by a default 
+            discovery mechanism which is used if none are registered with the Dependency Injection engine.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing the discovered instances.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetFilterManager(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.IWebHookFilterProvider})">
+            <summary>
+            Gets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> implementation which is used if none are registered with the
+            Dependency Injection engine.
+            </summary>
+            <param name="filterProviders">The collection of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> instances to use.</param>
+            <returns>A default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetSender(Microsoft.AspNet.WebHooks.Diagnostics.ILogger)">
+            <summary>
+            Gets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <returns>A default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.SetSender(Microsoft.AspNet.WebHooks.IWebHookSender)">
+            <summary>
+            Sets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <param name="instance">The <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> to use. If <c>null</c> then a default implementation is used.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.GetManager(Microsoft.AspNet.WebHooks.IWebHookStore,Microsoft.AspNet.WebHooks.IWebHookSender,Microsoft.AspNet.WebHooks.Diagnostics.ILogger)">
+            <summary>
+            Gets a default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> implementation which is used if none are registered with the 
+            Dependency Injection engine.
+            </summary>
+            <returns>A default <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.Services.CustomServices.Reset">
+            <summary>
+            For testing purposes
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookSender">
+            <summary>
+            Provides a base implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> that defines the default format
+            for HTTP requests sent as WebHooks. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.#ctor(Microsoft.AspNet.WebHooks.Diagnostics.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookSender"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookSender.Logger">
+            <summary>
+            Gets the current <see cref="T:Microsoft.AspNet.WebHooks.Diagnostics.ILogger"/> instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.SendWebHookWorkItemsAsync(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.WebHookWorkItem})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.CreateWebHookRequest(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            Creates an <see cref="T:System.Net.Http.HttpRequestMessage"/> containing the headers and body given a <paramref name="workItem"/>.
+            </summary>
+            <param name="workItem">A <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/> representing the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to be sent.</param>
+            <returns>A filled in <see cref="T:System.Net.Http.HttpRequestMessage"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.CreateWebHookRequestBody(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            Creates a <see cref="T:Newtonsoft.Json.Linq.JObject"/> used as the <see cref="T:System.Net.Http.HttpRequestMessage"/> entity body for a <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            </summary>
+            <param name="workItem">The <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/> representing the data to be sent.</param>
+            <returns>An initialized <see cref="T:Newtonsoft.Json.Linq.JObject"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookSender.SignWebHookRequest(Microsoft.AspNet.WebHooks.WebHookWorkItem,System.Net.Http.HttpRequestMessage,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Adds a SHA 256 signature to the <paramref name="body"/> and adds it to the <paramref name="request"/> as an 
+            HTTP header to the <see cref="T:System.Net.Http.HttpRequestMessage"/> along with the entity body.
+            </summary>
+            <param name="workItem">The current <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/>.</param>
+            <param name="request">The request to add the signature to.</param>
+            <param name="body">The body to sign and add to the request.</param>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookSender">
+            <summary>
+            Provides an abstraction for sending out WebHooks as provided by <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/>. Implementation
+            can control the format of the WebHooks as well as how they are sent including retry policies and error handling.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookSender.SendWebHookWorkItemsAsync(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.WebHookWorkItem})">
+            <summary>
+            Sends out the given collection of <paramref name="workItems"/> using whatever mechanism defined by the
+            <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> implementation.
+            </summary>
+            <param name="workItems">The collection of <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/> instances to process.</param>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookUser">
+            <summary>
+            Provides an abstraction for getting the User ID from a given <see cref="T:System.Security.Principal.IPrincipal"/>. The User ID 
+            is used to identify which user a given <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> belongs to.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookUser.GetUserIdAsync(System.Security.Principal.IPrincipal)">
+            <summary>
+            Gets the user ID for a given <paramref name="user"/>. The user ID is used to uniquely 
+            identify a user so that only events coming from actions of that user generates WebHooks
+            registered for that user.
+            </summary>
+            <param name="user">The <see cref="T:System.Security.Principal.IPrincipal"/> to get the user ID from.</param>
+            <returns>The user ID.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.NotificationDictionary">
+            <summary>
+            Contains WebHook settings that are provided by the outside, for example through application settings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.NotificationDictionary.#ctor">
+            <summary>
+            Initializes a new empty <see cref="T:Microsoft.AspNet.WebHooks.NotificationDictionary"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.NotificationDictionary.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.NotificationDictionary"/> class.
+            </summary>
+            <param name="action">An action describing the notification. In order for the actions to match
+            the WebHook filter, it must match one or more of the filter values registered with the 
+            <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/>.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.NotificationDictionary.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.NotificationDictionary"/> class with the specified serialization information and streaming context.
+            </summary>
+            <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> containing information about the <see cref="T:Microsoft.AspNet.WebHooks.NotificationDictionary"/> to be initialized.</param>
+            <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> that indicates the source destination and context information of a serialized stream.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.NotificationDictionary.Action">
+            <summary>
+            Gets or sets the Action for this instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.NotificationDictionary.Item(System.String)">
+            <summary>
+            Gets or sets the value associated with the specified key.
+            </summary>
+            <param name="key">The key of the value to get or set.</param>
+            <returns>The value associated with the specified key. If the specified key is not found, a get operation throws a <see cref="T:System.Collections.Generic.KeyNotFoundException"/>, and a set operation creates a new element with the specified key.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.StoreResult">
+            <summary>
+            Indicates the result of inserting, updating, and deleting items in the <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.WebHooks.StoreResult.Success">
+            <summary>
+            The operation succeeded.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.WebHooks.StoreResult.NotFound">
+            <summary>
+            The targeted entity did not exist.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.WebHooks.StoreResult.Conflict">
+            <summary>
+            The operation resulted in a conflict.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.WebHooks.StoreResult.OperationError">
+            <summary>
+            The operation was not formulated correctly.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.WebHooks.StoreResult.InternalError">
+            <summary>
+            The operation resulted in an internal error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager">
+            <summary>
+            Provides an abstraction for managing all registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> instances.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookFilterManager.GetAllWebHookFiltersAsync">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.Dictionary`2"/> of all registered <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> instances 
+            provided by registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> instances.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IDictionary`2"/> of <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> instances keyed by name.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider">
+            <summary>
+            Provides an abstraction for adding filters that can be used to determine when <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> are triggered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookFilterProvider.GetFiltersAsync">
+            <summary>
+            Get the filters for this <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/> implementation so that they be applied to <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>
+            instances.
+            </summary>
+            <returns>A collection of <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> instances.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookManager">
+            <summary>
+            Provides an abstraction for launching WebHooks based on events happening in the system. When 
+            the <see cref="M:Microsoft.AspNet.WebHooks.IWebHookManager.NotifyAsync(System.String,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})"/> method is called, 
+            all registered WebHooks with matching filters will launch indicating to the recipient of the WebHook that an event happened.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookManager.VerifyWebHookAsync(Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Verifies that the URI of the given <paramref name="webHook"/> is reachable and responds with the expected
+            data in response to an echo request. If a correct response can not be obtained then an <see cref="T:System.Exception"/>
+            is thrown with a detailed description of the problem.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to verify</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookManager.NotifyAsync(System.String,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all registered WebHooks for a given <paramref name="user"/> with one or 
+            more matching filters. For active WebHooks with matching filters, an HTTP request will be sent to the 
+            designated WebHook URI with information about the action.
+            </summary>
+            <param name="user">The user for which to lookup and dispatch matching WebHooks.</param>
+            <param name="notifications">The set of notifications to include in the WebHook request.</param>
+            <param name="predicate">An optional function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookManager.NotifyAllAsync(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all users with subscriptions that match the given <paramref name="predicate"/>. For active 
+            WebHooks with matching filters, regardless of user, an HTTP request will be sent to the designated WebHook URI with 
+            information about the action.
+            </summary>
+            <param name="notifications">The set of notifications to include in the WebHook request.</param>
+            <param name="predicate">An optional function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.IWebHookStore">
+            <summary>
+            Provides an abstraction for managing persistent <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances. WebHooks are 
+            managed on a per user basis where each user is identified by a string. This can for example 
+            be the user ID associated with a token or some other unique user identifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.GetAllWebHooksAsync(System.String)">
+            <summary>
+            Gets all registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances for a given <paramref name="user"/>.
+            </summary>
+            <param name="user">The user for which to get the registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</param>
+            <returns>All registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances for this user.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.QueryWebHooksAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Gets all active <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances registered for a given user where the WebHook filters 
+            match one of more of the given <paramref name="actions"/>.
+            </summary>
+            <param name="user">The user for which to query the registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</param>
+            <param name="actions">The set of actions that determines matching <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</param>
+            <param name="predicate">An optional function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>A collection of matching (and active) <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.LookupWebHookAsync(System.String,System.String)">
+            <summary>
+            Looks up an existing <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> for a given <paramref name="user"/>. If a <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>
+            with this <paramref name="id"/> is not present then <c>null</c> is returned.
+            </summary>
+            <param name="user">The user for which to lookup a registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instance.</param>
+            <param name="id">The ID uniquely identifying the WebHook.</param>
+            <returns>The cached <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.InsertWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Registers a new <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> for a given <paramref name="user"/>.
+            </summary>
+            <param name="user">The user for which to register the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.</param>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to register.</param>
+            <returns><c>true</c> if the WebHook is registered; <c>false</c> if it already exists.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.UpdateWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Updates an existing <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> for a given <paramref name="user"/>.
+            </summary>
+            <param name="user">The user for which to update the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.</param>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to update.</param>
+            <returns><c>true</c> if the WebHook is updated; <c>false</c> if it does not exist.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.DeleteWebHookAsync(System.String,System.String)">
+            <summary>
+            Deletes a registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> for a given <paramref name="user"/>. If a <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> 
+            with the given <paramref name="id"/> is not found then the method returns <c>false</c>.
+            </summary>
+            <param name="user">The user for which to delete all <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</param>
+            <param name="id">The ID uniquely identifying the WebHook.</param>
+            <returns><c>true</c> if the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> was removed, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.DeleteAllWebHooksAsync(System.String)">
+            <summary>
+            Deletes all existing <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances for a given <paramref name="user"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.IWebHookStore.QueryWebHooksAcrossAllUsersAsync(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Gets all active <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances across all users with subscriptions that match the given <paramref name="predicate"/>.
+            </summary>
+            <param name="actions">The set of actions that determines matching <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</param>
+            <param name="predicate">An optional function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>A collection of matching (and active) <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.MemoryWebHookStore">
+            <summary>
+            Provides an implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> storing registered WebHooks in memory.
+            </summary>
+            <remarks>Actual deployments should replace this with a persistent store, for example provided by
+            <c>Microsoft.AspNet.WebHooks.Custom.AzureStorage</c>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.GetAllWebHooksAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.QueryWebHooksAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.LookupWebHookAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.InsertWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.UpdateWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.DeleteWebHookAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.DeleteAllWebHooksAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.MemoryWebHookStore.QueryWebHooksAcrossAllUsersAsync(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHook">
+            <summary>
+            Describes the contents and behavior or a WebHook. A <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is similar to a subscription in a 
+            pub/sub system in that it allows the subscriber to indicate when and how event notifications should get 
+            dispatched and where they should get dispatched to. A <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is registered and managed on a 
+            per user basis which means that each user has a separate set of WebHooks that can get trigged by actions
+            executed by that user. That is, user <c>A</c> will not see a WebHook fired for an action performed by user <c>B</c>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHook.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Id">
+            <summary>
+            Gets or sets a unique ID of the WebHook. This ID can be used to later refer to the WebHook in case it
+            needs to be updated or deleted. The ID is by default in the form of a <see cref="T:System.Guid"/> and if the field 
+            is cleared it will be reset to a <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.WebHookUri">
+            <summary>
+            Gets or sets the URI of the WebHook.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Secret">
+            <summary>
+            Gets or sets the secret used to sign the body of the WebHook request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Description">
+            <summary>
+            Gets or sets a description of the WebHook.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.IsPaused">
+            <summary>
+            Gets or sets a value indicating whether the WebHook is paused.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Filters">
+            <summary>
+            Gets the set of case-insensitive filters associated with this WebHook. The filters indicate 
+            which WebHook events that this WebHook will be notified for. The list of filters can be obtained from
+            the registered <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Headers">
+            <summary>
+            Gets a set of additional HTTP headers that will be sent with the WebHook request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHook.Properties">
+            <summary>
+            Gets a set of additional case-insensitive properties that will be sent with the WebHook request
+            as part of the HTTP request entity body.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookFilter">
+            <summary>
+            Defines a filter which can be applied when registering a WebHook. 
+            The filter determines which event notifications will get dispatched to a given WebHook. 
+            That is, depending on which filters a WebHook is created with, it will only see event 
+            notifications that match one or more of those filters.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookFilter.Name">
+            <summary>
+            Gets or sets the name of the filter, e.g. <c>Blob Update</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookFilter.Description">
+            <summary>
+            Gets or sets a description of the filter.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookFilterManager">
+            <summary>
+            Provides an implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterManager"/> which provides the set of 
+            registered <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> instances.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookFilterManager.#ctor(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.IWebHookFilterProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilterManager"/> class with the 
+            given <paramref name="providers"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookFilterManager.GetAllWebHookFiltersAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.DataflowWebHookSender">
+            <summary>
+            Provides an implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/> for sending HTTP requests to 
+            registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances using a default <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> wire format
+            and retry mechanism.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.#ctor(Microsoft.AspNet.WebHooks.Diagnostics.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.DataflowWebHookSender"/> class with a default retry policy.
+            </summary>
+            <param name="logger">The current <see cref="T:Microsoft.AspNet.WebHooks.Diagnostics.ILogger"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.#ctor(Microsoft.AspNet.WebHooks.Diagnostics.ILogger,System.Collections.Generic.IEnumerable{System.TimeSpan},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.DataflowWebHookSender"/> class with a given collection of <paramref name="retryDelays"/> and
+            <paramref name="options"/> for how to manage the queuing policy for each transmission. The transmission model is as follows: each try
+            and subsequent retries is managed by a separate <see cref="T:System.Threading.Tasks.Dataflow.ActionBlock`1"/> which controls the level of concurrency used to 
+            send out WebHooks. The <paramref name="options"/> parameter can be used to control all <see cref="T:System.Threading.Tasks.Dataflow.ActionBlock`1"/> instances 
+            by setting the maximum level of concurrency, length of queue, and more.
+            </summary>
+            <param name="logger">The current <see cref="T:Microsoft.AspNet.WebHooks.Diagnostics.ILogger"/>.</param>
+            <param name="retryDelays">A collection of <see cref="T:System.TimeSpan"/> instances indicating the delay between each retry. If <c>null</c>,
+            then a default retry policy is used of one retry after one 1 minute and then again after 4 minutes. A retry is attempted if the 
+            delivery fails or does not result in a 2xx HTTP status code. If the status code is 410 then no retry is attempted. If the collection
+            is empty then no retries are attempted.</param>
+            <param name="options">An <see cref="T:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions"/> used to control the <see cref="T:System.Threading.Tasks.Dataflow.ActionBlock`1"/> instances.
+            The default setting uses a maximum of 8 concurrent transmitters for each try or retry.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.#ctor(Microsoft.AspNet.WebHooks.Diagnostics.ILogger,System.Collections.Generic.IEnumerable{System.TimeSpan},System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions,System.Net.Http.HttpClient)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.DataflowWebHookSender"/> with the given retry policy, <paramref name="options"/>,
+            and <paramref name="httpClient"/>. This constructor is intended for unit testing purposes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.SendWebHookWorkItemsAsync(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.WebHookWorkItem})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookRetry(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            If delivery of a WebHook is not successful, i.e. something other than a 2xx or 410 Gone 
+            HTTP status code is received and the request is to be retried, then <see cref="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookRetry(Microsoft.AspNet.WebHooks.WebHookWorkItem)"/> 
+            is called enabling additional post-processing of a retry request. 
+            </summary>
+            <param name="workItem">The current <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookSuccess(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            If delivery of a WebHook is successful, i.e. a 2xx HTTP status code is received,
+            then <see cref="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookSuccess(Microsoft.AspNet.WebHooks.WebHookWorkItem)"/> is called enabling additional post-processing. 
+            </summary>
+            <param name="workItem">The current <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookFailure(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            If delivery of a WebHook is not successful, i.e. something other than a 2xx or 410 Gone 
+            HTTP status code is received after having retried the request according to the retry-policy, 
+            then <see cref="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookFailure(Microsoft.AspNet.WebHooks.WebHookWorkItem)"/> is called enabling additional post-processing. 
+            </summary>
+            <param name="workItem">The current <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookGone(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            If delivery of a WebHook results in a 410 Gone HTTP status code, then <see cref="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.OnWebHookGone(Microsoft.AspNet.WebHooks.WebHookWorkItem)"/> 
+            is called enabling additional post-processing. 
+            </summary>
+            <param name="workItem">The current <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.DataflowWebHookSender.LaunchWebHook(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <summary>
+            Launch a <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            </summary>
+            <remarks>We don't let exceptions propagate out from this method as it is used by the launchers
+            and if they see an exception they shut down.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookStore">
+            <summary>
+            Provides an abstract <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/> implementation which can be used to base other implementations on. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookStore"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.GetAllWebHooksAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.QueryWebHooksAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.LookupWebHookAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.InsertWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.UpdateWebHookAsync(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.DeleteWebHookAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.DeleteAllWebHooksAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.QueryWebHooksAcrossAllUsersAsync(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.NormalizeKey(System.String)">
+            <summary>
+            Normalizes a given key to ensure consistent lookups.
+            </summary>
+            <param name="key">The key to normalize.</param>
+            <returns>The normalized key.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookStore.MatchesAnyAction(Microsoft.AspNet.WebHooks.WebHook,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Checks that the given <paramref name="webHook"/> is not paused and matches at least
+            one of the given <paramref name="actions"/>.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instance to operate on.</param>
+            <param name="actions">The set of actions to match against the <paramref name="webHook"/> filters.</param>
+            <returns><c>true</c> if the given <paramref name="webHook"/> matches one of the pro</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookUser">
+            <summary>
+            Provides a default implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookUser"/> for getting information about a user.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookUser.IdClaimsType">
+            <summary>
+            Gets or sets the claims type which is used to get the user ID from the <see cref="T:System.Security.Principal.IPrincipal"/>.
+            The default value is <see cref="F:System.Security.Claims.ClaimTypes.Name"/> but can be set to any non-null string
+            representing the user ID.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookUser.GetUserIdAsync(System.Security.Principal.IPrincipal)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookUser.GetClaim(System.Security.Claims.ClaimsPrincipal,System.String)">
+            <summary>
+            Looks up a <paramref name="claimsType"/> in the provided <paramref name="principal"/> and returns the value if found or <c>null</c> otherwise.
+            </summary>
+            <returns>The value of the claim or <c>null</c> if not found.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookUser.Reset">
+            <summary>
+            For testing purposes
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookManager">
+            <summary>
+            Provides an implementation of <see cref="T:Microsoft.AspNet.WebHooks.IWebHookManager"/> for managing notifications and mapping
+            them to registered WebHooks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.#ctor(Microsoft.AspNet.WebHooks.IWebHookStore,Microsoft.AspNet.WebHooks.IWebHookSender,Microsoft.AspNet.WebHooks.Diagnostics.ILogger)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookManager"/> with a default retry policy.
+            </summary>
+            <param name="webHookStore">The current <see cref="T:Microsoft.AspNet.WebHooks.IWebHookStore"/>.</param>
+            <param name="webHookSender">The current <see cref="T:Microsoft.AspNet.WebHooks.IWebHookSender"/>.</param>
+            <param name="logger">The current <see cref="T:Microsoft.AspNet.WebHooks.Diagnostics.ILogger"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.#ctor(Microsoft.AspNet.WebHooks.IWebHookStore,Microsoft.AspNet.WebHooks.IWebHookSender,Microsoft.AspNet.WebHooks.Diagnostics.ILogger,System.Net.Http.HttpClient)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookManager"/> with the given <paramref name="httpClient"/>. This 
+            constructor is intended for unit testing purposes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.VerifyWebHookAsync(Microsoft.AspNet.WebHooks.WebHook)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.NotifyAsync(System.String,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.NotifyAllAsync(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.VerifyEchoAsync(Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Verifies the WebHook by submitting a GET request with a query token intended by the echoed back.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to verify.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.VerifyUri(System.Uri)">
+            <summary>
+            Verifies that the <paramref name="webHookUri"/> has either an 'http' or 'https' scheme.
+            </summary>
+            <param name="webHookUri">The URI to verify.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookManager.VerifySecret(System.String)">
+            <summary>
+            Verifies that the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> secret is between 32 and 64 characters long.
+            </summary>
+            <param name="secret">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> secret to validate.</param>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WebHookWorkItem">
+            <summary>
+            A work item represents the act of firing a single WebHook with one or more notifications.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WebHookWorkItem.#ctor(Microsoft.AspNet.WebHooks.WebHook,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/> with the given <paramref name="notifications"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookWorkItem.Id">
+            <summary>
+            Gets or sets a unique ID which is used to identify this firing of a <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookWorkItem.WebHook">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to fire.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookWorkItem.Offset">
+            <summary>
+            Gets or sets the offset (starting with zero) identifying the launch line to be used when firing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookWorkItem.Notifications">
+            <summary>
+            Gets the set of <see cref="T:Microsoft.AspNet.WebHooks.NotificationDictionary"/> that caused the WebHook to be fired.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WebHookWorkItem.Properties">
+            <summary>
+            Gets the set of additional properties associated with this <see cref="T:Microsoft.AspNet.WebHooks.WebHookWorkItem"/> instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.WebHooks.WildcardWebHookFilterProvider">
+            <summary>
+            Defines a default wildcard <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> which matches all filters.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.WebHooks.WildcardWebHookFilterProvider.Name">
+            <summary>
+            Gets the name of the <see cref="T:Microsoft.AspNet.WebHooks.WebHookFilter"/> registered by this <see cref="T:Microsoft.AspNet.WebHooks.IWebHookFilterProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.WebHooks.WildcardWebHookFilterProvider.GetFiltersAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:System.Web.Http.ApiControllerExtensions">
+            <summary>
+            Various extension methods for the ASP.NET Web API <see cref="T:System.Web.Http.ApiController"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAsync(System.Web.Http.ApiController,System.String,System.Object)">
+            <summary>
+            Submits a notification to all matching registered WebHooks. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must be registered by the
+            current <see cref="P:System.Web.Http.ApiController.User"/> and have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAsync(System.Web.Http.ApiController,System.String,System.Object,System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all matching registered WebHooks. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must be registered by the
+            current <see cref="P:System.Web.Http.ApiController.User"/> and have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <param name="predicate">A function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAsync(System.Web.Http.ApiController,Microsoft.AspNet.WebHooks.NotificationDictionary[])">
+            <summary>
+            Submits a notification to all matching registered WebHooks. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must be registered by the
+            current <see cref="P:System.Web.Http.ApiController.User"/> and have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="notifications">The set of notifications to include in the WebHook.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAsync(System.Web.Http.ApiController,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all matching registered WebHooks. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must be registered by the
+            current <see cref="P:System.Web.Http.ApiController.User"/> and have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="notifications">The set of notifications to include in the WebHook.</param>
+            <param name="predicate">A function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAllAsync(System.Web.Http.ApiController,System.String,System.Object)">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAllAsync(System.Web.Http.ApiController,System.String,System.Object,System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="action">The action describing the notification.</param>
+            <param name="data">Optional additional data to include in the WebHook request.</param>
+            <param name="predicate">A function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAllAsync(System.Web.Http.ApiController,Microsoft.AspNet.WebHooks.NotificationDictionary[])">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must 
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="notifications">The set of notifications to include in the WebHook.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="M:System.Web.Http.ApiControllerExtensions.NotifyAllAsync(System.Web.Http.ApiController,System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.NotificationDictionary},System.Func{Microsoft.AspNet.WebHooks.WebHook,System.String,System.Boolean})">
+            <summary>
+            Submits a notification to all matching registered WebHooks across all users. To match, the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> must
+            have a filter that matches one or more of the actions provided for the notification.
+            </summary>
+            <param name="controller">The <see cref="T:System.Web.Http.ApiController"/> instance.</param>
+            <param name="notifications">The set of notifications to include in the WebHook.</param>
+            <param name="predicate">A function to test each <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to see whether it fulfills the condition. The
+            predicate is passed the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> and the user who registered it. If the predicate returns <c>true</c> then
+            the <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> is included; otherwise it is not.</param>
+            <returns>The number of <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances that were selected and subsequently notified about the actions.</returns>
+        </member>
+        <member name="T:System.Web.Http.HttpConfigurationExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Web.Http.HttpConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.HttpConfigurationExtensions.InitializeCustomWebHooks(System.Web.Http.HttpConfiguration)">
+            <summary>
+             Initializes support for adding custom WebHook support to your ASP.NET project. The functionality 
+             enables users to manage WebHook subscribers, and to send WebHooks to subscribers with matching 
+             registrations.
+            </summary>
+            <param name="config">The current <see cref="T:System.Web.Http.HttpConfiguration"/>config.</param>
+        </member>
+    </members>
+</doc>

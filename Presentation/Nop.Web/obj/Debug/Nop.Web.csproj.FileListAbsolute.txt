@@ -19,6 +19,8 @@ E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentatio
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.Extensions.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.VisualStudio.RemoteControl.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.VisualStudio.Utilities.Internal.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Web.Infrastructure.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Web.RedisSessionStateProvider.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\MiniProfiler.dll
@@ -35,6 +37,7 @@ E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentatio
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Net.Http.Formatting.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Net.Http.Primitives.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Spatial.dll
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Threading.Tasks.Dataflow.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Helpers.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Http.dll
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Http.Owin.dll
@@ -78,6 +81,8 @@ E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentatio
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.Extensions.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.VisualStudio.RemoteControl.xml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Microsoft.VisualStudio.Utilities.Internal.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\MiniProfiler.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\Newtonsoft.Json.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\StackExchange.Redis.StrongName.xml
@@ -85,6 +90,7 @@ E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentatio
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Net.Http.Formatting.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Net.Http.Primitives.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Spatial.xml
+E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Threading.Tasks.Dataflow.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Helpers.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Http.xml
 E:\My Work(Up)\nopCommerce-release-3.90\nopCommerce-release-3.90\src\Presentation\Nop.Web\bin\System.Web.Http.Owin.xml

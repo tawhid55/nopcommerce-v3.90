@@ -18,3 +18,5 @@ Shipping.USPS
 Tax.FixedOrByCountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
+Payments.CashOnDelivery
+Nop.Plugin.Api

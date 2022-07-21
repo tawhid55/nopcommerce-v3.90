@@ -36,6 +36,9 @@ namespace Nop.Core.Domain.Customers
         /// <summary>
         /// Gets or sets the email
         /// </summary>
+        /// 
+        public string UserID { get; set; }
+        public string Title { get; set; }
         public string Email { get; set; }
         /// <summary>
         /// Gets or sets the email that should be re-validated. Used in scenarios when a customer is already registered and wants to change an email address.

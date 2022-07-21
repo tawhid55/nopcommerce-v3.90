@@ -1,0 +1,2234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nop.Plugin.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomerRolesController.GetAllCustomerRoles(System.String)">
+            <summary>
+            Retrieve all customer roles
+            </summary>
+            <param name="fields">Fields from the customer role you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.LanguagesController.GetAllLanguages(System.String)">
+            <summary>
+            Retrieve all languages
+            </summary>
+            <param name="fields">Fields from the language you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.NewsLetterSubscriptionController.GetNewsLetterSubscriptions(Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel)">
+            <summary>
+            Receive a list of all NewsLetterSubscriptions
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.NewsLetterSubscriptionController.DeactivateNewsLetterSubscription(System.String)">
+            <summary>
+            Deactivate a NewsLetter subscriber by email
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductAttributesController.GetProductAttributes(Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel)">
+            <summary>
+            Receive a list of all product attributes
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductAttributesController.GetProductAttributesCount">
+            <summary>
+            Receive a count of all product attributes
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductAttributesController.GetProductAttributeById(System.Int32,System.String)">
+            <summary>
+            Retrieve product attribute by spcified id
+            </summary>
+            <param name="id">Id of the product attribute</param>
+            <param name="fields">Fields from the product attribute you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.StoreController.GetCurrentStore(System.String)">
+            <summary>
+            Retrieve category by spcified id
+            </summary>
+            <param name="fields">Fields from the category you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.StoreController.GetAllStores(System.String)">
+            <summary>
+            Retrieve all stores
+            </summary>
+            <param name="fields">Fields from the store you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.GetAllWebHooks">
+            <summary>
+            Gets all registered WebHooks for a given user.
+            </summary>
+            <returns>A collection containing the registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instances for a given user.</returns>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.GetWebHookById(System.String)">
+            <summary>
+            Looks up a registered WebHook with the given <paramref name="id"/> for a given user.
+            </summary>
+            <returns>The registered <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> instance for a given user.</returns>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.RegisterWebHook(Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Registers a new WebHook for a given user.
+            </summary>
+            <param name="webHook">The <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to create.</param>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.UpdateWebHook(System.String,Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Updates an existing WebHook registration.
+            </summary>
+            <param name="id">The WebHook ID.</param>
+            <param name="webHook">The new <see cref="T:Microsoft.AspNet.WebHooks.WebHook"/> to use.</param>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.DeleteWebHook(System.String)">
+            <summary>
+            Deletes an existing WebHook registration.
+            </summary>
+            <param name="id">The WebHook ID.</param>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.DeleteAllWebHooks">
+            <summary>
+            Deletes all existing WebHook registrations.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.Initialize(System.Web.Http.Controllers.HttpControllerContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.VerifyFilters(Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Ensure that the provided <paramref name="webHook"/> only has registered filters.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.RemovePrivateFilters(System.Collections.Generic.IEnumerable{Microsoft.AspNet.WebHooks.WebHook})">
+            <summary>
+            Removes all private filters from registered WebHooks.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.VerifyWebHook(Microsoft.AspNet.WebHooks.WebHook)">
+            <summary>
+            Ensures that the provided <paramref name="webHook"/> has a reachable Web Hook URI unless
+            the WebHook URI has a <c>NoEcho</c> query parameter.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.GetUserId">
+            <summary>
+            Gets the user ID for this request.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.WebHookRegistrationsController.CreateHttpResult(Microsoft.AspNet.WebHooks.StoreResult)">
+            <summary>
+            Creates an <see cref="T:System.Web.Http.IHttpActionResult"/> based on the provided <paramref name="result"/>.
+            </summary>
+            <param name="result">The result to use when creating the <see cref="T:System.Web.Http.IHttpActionResult"/>.</param>
+            <returns>An initialized <see cref="T:System.Web.Http.IHttpActionResult"/>.</returns>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CategoriesController.GetCategories(Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel)">
+            <summary>
+            Receive a list of all Categories
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CategoriesController.GetCategoriesCount(Nop.Plugin.Api.Models.CategoriesParameters.CategoriesCountParametersModel)">
+            <summary>
+            Receive a count of all Categories
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CategoriesController.GetCategoryById(System.Int32,System.String)">
+            <summary>
+            Retrieve category by spcified id
+            </summary>
+            <param name="id">Id of the category</param>
+            <param name="fields">Fields from the category you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetCustomers(Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel)">
+            <summary>
+            Retrieve all customers of a shop
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetCustomerById(System.Int32,System.String)">
+            <summary>
+            Retrieve customer by spcified id
+            </summary>
+            <param name="id">Id of the customer</param>
+            <param name="fields">Fields from the customer you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetCustomersCount">
+            <summary>
+            Get a count of all customers
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.Search(Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel)">
+            <summary>
+            Search for customers matching supplied query
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetFullCustomerById(System.String,System.String)">
+            <summary>
+            Retrieve customer by spcified UserID
+            </summary>
+            <param name="userid">Id of the customer</param>
+            <param name="fields">Fields from the customer you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetFullCustomerByEmail(System.String,System.String)">
+            <summary>
+            Retrieve customer by spcified Email
+            </summary>
+            <param name="email">Email of the customer</param>
+            <param name="fields">Fields from the customer you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetAllCustomers(Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel)">
+            <summary>
+            Retrieve all customers of a shop
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.CustomersController.GetCustomerIdByUserId(System.String)">
+            <summary>
+            Retrieve customer Id by spcified UserID
+            </summary>
+            <param name="userid">UserId of the customer</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductCategoryMappingsController.GetMappings(Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsParametersModel)">
+            <summary>
+            Receive a list of all Product-Category mappings
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductCategoryMappingsController.GetMappingsCount(Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsCountParametersModel)">
+            <summary>
+            Receive a count of all Product-Category mappings
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductCategoryMappingsController.GetMappingById(System.Int32,System.String)">
+            <summary>
+            Retrieve Product-Category mappings by spcified id
+            </summary>
+              /// <param name="id">Id of the Product-Category mapping</param>
+            <param name="fields">Fields from the Product-Category mapping you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetOrders(Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel)">
+            <summary>
+            Receive a list of all Orders
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetOrdersCount(Nop.Plugin.Api.Models.OrdersParameters.OrdersCountParametersModel)">
+            <summary>
+            Receive a count of all Orders
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetOrderById(System.Int32,System.String)">
+            <summary>
+            Retrieve order by spcified id
+            </summary>
+              /// <param name="id">Id of the order</param>
+            <param name="fields">Fields from the order you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetOrdersByCustomerId(System.Int32)">
+            <summary>
+            Retrieve all orders for customer
+            </summary>
+            <param name="customer_id">Id of the customer whoes orders you want to get</param>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetPendingOrders">
+            <summary>
+            Receive a list of all pending Orders (ShippingStatus = NotYetShipped)
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.OrdersController.GetAllOrders">
+            <summary>
+            Receive a list of all pending Orders (ShippingStatus = NotYetShipped)
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductsController.GetProducts(Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel)">
+            <summary>
+            Receive a list of all products
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductsController.GetProductsCount(Nop.Plugin.Api.Models.ProductsParameters.ProductsCountParametersModel)">
+            <summary>
+            Receive a count of all products
+            </summary>
+            <response code="200">OK</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ProductsController.GetProductById(System.Int32,System.String)">
+            <summary>
+            Retrieve product by spcified id
+            </summary>
+            <param name="id">Id of the product</param>
+            <param name="fields">Fields from the product you want your json to contain</param>
+            <response code="200">OK</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ShoppingCartItemsController.GetShoppingCartItems(Nop.Plugin.Api.Models.ShoppingCartsParameters.ShoppingCartItemsParametersModel)">
+            <summary>
+            Receive a list of all shopping cart items
+            </summary>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:Nop.Plugin.Api.Controllers.ShoppingCartItemsController.GetShoppingCartItemsByCustomerId(System.Int32,Nop.Plugin.Api.Models.ShoppingCartsParameters.ShoppingCartItemsForCustomerParametersModel)">
+            <summary>
+            Receive a list of all shopping cart items by customer id
+            </summary>
+            <param name="customerId">Id of the customer whoes shopping cart items you want to get</param>
+            <response code="200">OK</response>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.Id">
+            <summary>
+            Gets or sets the store ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.Name">
+            <summary>
+            Gets or sets the customer role name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.FreeShipping">
+            <summary>
+            Gets or sets a value indicating whether the customer role is marked as free shiping
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.TaxExempt">
+            <summary>
+            Gets or sets a value indicating whether the customer role is marked as tax exempt
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.Active">
+            <summary>
+            Gets or sets a value indicating whether the customer role is active
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.IsSystemRole">
+            <summary>
+            Gets or sets a value indicating whether the customer role is system
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.SystemName">
+            <summary>
+            Gets or sets the customer role system name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.EnablePasswordLifetime">
+            <summary>
+            Gets or sets a value indicating whether the customers must change passwords after a specified time
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.CustomerRoles.CustomerRoleDto.PurchasedWithProductId">
+            <summary>
+            Gets or sets a product identifier that is required by this customer role. 
+            A customer is added to this customer role once a specified product is purchased.
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.tCustomerDto.Email">
+            <summary>
+            Gets or sets the email
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.tCustomerDto.ShippingAddress">
+            <summary>
+            Default shipping address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.Email">
+            <summary>
+            Gets or sets the email
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.AdminComment">
+            <summary>
+            Gets or sets the admin comment
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.IsTaxExempt">
+            <summary>
+            Gets or sets a value indicating whether the customer is tax exempt
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.HasShoppingCartItems">
+            <summary>
+            Gets or sets a value indicating whether this customer has some products in the shopping cart
+            <remarks>The same as if we run this.ShoppingCartItems.Count > 0
+            We use this property for performance optimization:
+            if this property is set to false, then we do not need to load "ShoppingCartItems" navigation property for each page load
+            It's used only in a couple of places in the presenation layer
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.Active">
+            <summary>
+            Gets or sets a value indicating whether the customer is active
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.Deleted">
+            <summary>
+            Gets or sets a value indicating whether the customer has been deleted
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.IsSystemAccount">
+            <summary>
+            Gets or sets a value indicating whether the customer account is system
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.SystemName">
+            <summary>
+            Gets or sets the customer system name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.LastIpAddress">
+            <summary>
+            Gets or sets the last IP address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of entity creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.LastLoginDateUtc">
+            <summary>
+            Gets or sets the date and time of last login
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.LastActivityDateUtc">
+            <summary>
+            Gets or sets the date and time of last activity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.RegisteredInStoreId">
+            <summary>
+             Gets or sets the store identifier in which customer registered
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.BaseCustomerDto.SubscribedToNewsletter">
+            <summary>
+             Gets or sets the subscribed to newsletter property
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerDto.ShoppingCartItems">
+            <summary>
+            Gets or sets shopping cart items
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerDto.BillingAddress">
+            <summary>
+            Default billing address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerDto.ShippingAddress">
+            <summary>
+            Default shipping address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerDto.CustomerAddresses">
+            <summary>
+            Gets or sets customer addresses
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerForShoppingCartItemDto.BillingAddress">
+            <summary>
+            Default billing address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerForShoppingCartItemDto.ShippingAddress">
+            <summary>
+            Default shipping address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Customers.CustomerForShoppingCartItemDto.Addresses">
+            <summary>
+            Gets or sets customer addresses
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.Id">
+            <summary>
+            Gets or sets the store ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.LanguageCulture">
+            <summary>
+            Gets or sets the language culture
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.UniqueSeoCode">
+            <summary>
+            Gets or sets the unique SEO code
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.FlagImageFileName">
+            <summary>
+            Gets or sets the flag image file name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.Rtl">
+            <summary>
+            Gets or sets a value indicating whether the language supports "Right-to-left"
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.LimitedToStores">
+            <summary>
+            Gets or sets a value indicating whether the entity is limited/restricted to certain stores
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.DefaultCurrencyId">
+            <summary>
+            Gets or sets the identifier of the default currency for this language; 0 is set when we use the default currency display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.Published">
+            <summary>
+            Gets or sets a value indicating whether the language is published
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LanguageDto.StoreIds">
+            <summary>
+            Gets or sets the store ids in which the language is enabled
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LocalizedNameDto.LanguageId">
+            <summary>
+            Gets or sets the language identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Languages.LocalizedNameDto.LocalizedName">
+            <summary>
+            Gets or sets the localized name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.NewsLetterSubscriptionDto.Id">
+            <summary>
+            Gets or sets the id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.NewsLetterSubscriptionDto.Email">
+            <summary>
+            Gets or sets the email
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.NewsLetterSubscriptionDto.Active">
+            <summary>
+            Gets or sets whether the subscription is active
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.NewsLetterSubscriptionDto.StoreId">
+            <summary>
+            Gets or sets whether the subscription is active
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.NewsLetterSubscriptionDto.CreatedOnUtc">
+            <summary>
+            Gets or sets created on utc date
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.LocalizedNames">
+            <summary>
+            Gets or sets the localized names
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.CategoryTemplateId">
+            <summary>
+            Gets or sets a value of used category template identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.MetaKeywords">
+            <summary>
+            Gets or sets the meta keywords
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.MetaDescription">
+            <summary>
+            Gets or sets the meta description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.MetaTitle">
+            <summary>
+            Gets or sets the meta title
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.ParentCategoryId">
+            <summary>
+            Gets or sets the parent category identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.PageSize">
+            <summary>
+            Gets or sets the page size
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.PageSizeOptions">
+            <summary>
+            Gets or sets the available customer selectable page size options
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.PriceRanges">
+            <summary>
+            Gets or sets the available price ranges
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.ShowOnHomePage">
+            <summary>
+            Gets or sets a value indicating whether to show the category on home page
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.IncludeInTopMenu">
+            <summary>
+            Gets or sets a value indicating whether to include this category in the top menu
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.HasDiscountsApplied">
+            <summary>
+            Gets or sets a value indicating whether this category has discounts applied
+            <remarks>The same as if we run category.AppliedDiscounts.Count > 0
+            We use this property for performance optimization:
+            if this property is set to false, then we do not need to load Applied Discounts navigation property
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.Published">
+            <summary>
+            Gets or sets a value indicating whether the entity is published
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.Deleted">
+            <summary>
+            Gets or sets a value indicating whether the entity has been deleted
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of instance creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Categories.CategoryDto.UpdatedOnUtc">
+            <summary>
+            Gets or sets the date and time of instance update
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.Id">
+            <summary>
+            Gets or sets the id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.Attributes">
+            <summary>
+            Gets or sets the selected attributes
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.Quantity">
+            <summary>
+            Gets or sets the quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.UnitPriceInclTax">
+            <summary>
+            Gets or sets the unit price in primary store currency (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.UnitPriceExclTax">
+            <summary>
+            Gets or sets the unit price in primary store currency (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.PriceInclTax">
+            <summary>
+            Gets or sets the price in primary store currency (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.PriceExclTax">
+            <summary>
+            Gets or sets the price in primary store currency (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.DiscountAmountInclTax">
+            <summary>
+            Gets or sets the discount amount (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.DiscountAmountExclTax">
+            <summary>
+            Gets or sets the discount amount (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.OriginalProductCost">
+            <summary>
+            Gets or sets the original cost of this order item (when an order was placed), qty 1
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.AttributeDescription">
+            <summary>
+            Gets or sets the attribute description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.DownloadCount">
+            <summary>
+            Gets or sets the download count
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.IsDownloadActivated">
+            <summary>
+            Gets or sets a value indicating whether download is activated
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.LicenseDownloadId">
+            <summary>
+            Gets or sets a license download identifier (in case this is a downloadable product)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.ItemWeight">
+            <summary>
+            Gets or sets the total weight of one item
+            It's nullable for compatibility with the previous version of nopCommerce where was no such property
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.RentalStartDateUtc">
+            <summary>
+            Gets or sets the rental product start date (null if it's not a rental product)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.RentalEndDateUtc">
+            <summary>
+            Gets or sets the rental product end date (null if it's not a rental product)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.OrderItems.OrderItemDto.Product">
+            <summary>
+            Gets the product
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductAttributes.ProductAttributeDto.Id">
+            <summary>
+            Gets or sets the product attribute id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductAttributes.ProductAttributeDto.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductAttributes.ProductAttributeDto.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.Id">
+            <summary>
+            Gets or sets the product attribute value id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.AttributeValueTypeId">
+            <summary>
+            Gets or sets the attribute value type identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.AssociatedProductId">
+            <summary>
+            Gets or sets the associated product identifier (used only with AttributeValueType.AssociatedToProduct)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.Name">
+            <summary>
+            Gets or sets the product attribute name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.ColorSquaresRgb">
+            <summary>
+            Gets or sets the color RGB value (used with "Color squares" attribute type)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.ImageSquaresImage">
+            <summary>
+            Gets or sets the picture ID for image square (used with "Image squares" attribute type)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.PriceAdjustment">
+            <summary>
+            Gets or sets the price adjustment (used only with AttributeValueType.Simple)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.WeightAdjustment">
+            <summary>
+            Gets or sets the weight adjustment (used only with AttributeValueType.Simple)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.Cost">
+            <summary>
+            Gets or sets the attibute value cost (used only with AttributeValueType.Simple)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.Quantity">
+            <summary>
+            Gets or sets the quantity of associated product (used only with AttributeValueType.AssociatedToProduct)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.IsPreSelected">
+            <summary>
+            Gets or sets a value indicating whether the value is pre-selected
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.PictureId">
+            <summary>
+            Gets or sets the picture (identifier) associated with this value. This picture should replace a product main picture once clicked (selected).
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeValueDto.AttributeValueType">
+            <summary>
+            Gets or sets the attribute value type
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.Id">
+            <summary>
+            Gets or sets the product attribute identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.ProductAttributeId">
+            <summary>
+            Gets or sets the product attribute identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.TextPrompt">
+            <summary>
+            Gets or sets a value a text prompt
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether the entity is required
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.AttributeControlTypeId">
+            <summary>
+            Gets or sets the attribute control type identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.DefaultValue">
+            <summary>
+            Gets or sets the default value (for textbox and multiline textbox)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.AttributeControlType">
+            <summary>
+            Gets the attribute control type
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductAttributeMappingDto.ProductAttributeValues">
+            <summary>
+            Gets the product attribute values
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Id">
+            <summary>
+            Gets or sets the product id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.VisibleIndividually">
+            <summary>
+            Gets or sets the values indicating whether this product is visible in catalog or search results.
+            It's used when this product is associated to some "grouped" one
+            This way associated products could be accessed/added/etc only from a grouped product details page
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.LocalizedNames">
+            <summary>
+            Gets or sets the localized names
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ShortDescription">
+            <summary>
+            Gets or sets the short description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.FullDescription">
+            <summary>
+            Gets or sets the full description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ShowOnHomePage">
+            <summary>
+            Gets or sets a value indicating whether to show the product on home page
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MetaKeywords">
+            <summary>
+            Gets or sets the meta keywords
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MetaDescription">
+            <summary>
+            Gets or sets the meta description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MetaTitle">
+            <summary>
+            Gets or sets the meta title
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AllowCustomerReviews">
+            <summary>
+            Gets or sets a value indicating whether the product allows customer reviews
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ApprovedRatingSum">
+            <summary>
+            Gets or sets the rating sum (approved reviews)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.NotApprovedRatingSum">
+            <summary>
+            Gets or sets the rating sum (not approved reviews)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ApprovedTotalReviews">
+            <summary>
+            Gets or sets the total rating votes (approved reviews)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.NotApprovedTotalReviews">
+            <summary>
+            Gets or sets the total rating votes (not approved reviews)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Sku">
+            <summary>
+            Gets or sets the SKU
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ManufacturerPartNumber">
+            <summary>
+            Gets or sets the manufacturer part number
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Gtin">
+            <summary>
+            Gets or sets the Global Trade Item Number (GTIN). These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsGiftCard">
+            <summary>
+            Gets or sets a value indicating whether the product is gift card
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.RequireOtherProducts">
+            <summary>
+            Gets or sets a value indicating whether the product requires that other products are added to the cart (Product X requires Product Y)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AutomaticallyAddRequiredProducts">
+            <summary>
+            Gets or sets a value indicating whether required products are automatically added to the cart
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsDownload">
+            <summary>
+            Gets or sets a value indicating whether the product is download
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.UnlimitedDownloads">
+            <summary>
+            Gets or sets a value indicating whether this downloadable product can be downloaded unlimited number of times
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MaxNumberOfDownloads">
+            <summary>
+            Gets or sets the maximum number of downloads
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DownloadExpirationDays">
+            <summary>
+            Gets or sets the number of days during customers keeps access to the file.
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.HasSampleDownload">
+            <summary>
+            Gets or sets a value indicating whether the product has a sample download file
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.HasUserAgreement">
+            <summary>
+            Gets or sets a value indicating whether the product has user agreement
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsRecurring">
+            <summary>
+            Gets or sets a value indicating whether the product is recurring
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.RecurringCycleLength">
+            <summary>
+            Gets or sets the cycle length
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.RecurringTotalCycles">
+            <summary>
+            Gets or sets the total cycles
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsRental">
+            <summary>
+            Gets or sets a value indicating whether the product is rental
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.RentalPriceLength">
+            <summary>
+            Gets or sets the rental length for some period (price for this period)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsShipEnabled">
+            <summary>
+            Gets or sets a value indicating whether the entity is ship enabled
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsFreeShipping">
+            <summary>
+            Gets or sets a value indicating whether the entity is free shipping
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ShipSeparately">
+            <summary>
+            Gets or sets a value this product should be shipped separately (each item)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AdditionalShippingCharge">
+            <summary>
+            Gets or sets the additional shipping charge
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsTaxExempt">
+            <summary>
+            Gets or sets a value indicating whether the product is marked as tax exempt
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.IsTelecommunicationsOrBroadcastingOrElectronicServices">
+            <summary>
+            Gets or sets a value indicating whether the product is telecommunications or broadcasting or electronic services
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.UseMultipleWarehouses">
+            <summary>
+            Gets or sets a value indicating whether multiple warehouses are used for this product
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ManageInventoryMethodId">
+            <summary>
+            Gets or sets a value indicating how to manage inventory.
+            0 - do not track inventory
+            1 - track inventory
+            2 - track invetory by attributes
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.StockQuantity">
+            <summary>
+            Gets or sets the stock quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DisplayStockAvailability">
+            <summary>
+            Gets or sets a value indicating whether to display stock availability
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DisplayStockQuantity">
+            <summary>
+            Gets or sets a value indicating whether to display stock quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MinStockQuantity">
+            <summary>
+            Gets or sets the minimum stock quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.NotifyAdminForQuantityBelow">
+            <summary>
+            Gets or sets the quantity when admin should be notified
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AllowBackInStockSubscriptions">
+            <summary>
+            Gets or sets a value indicating whether to back in stock subscriptions are allowed
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.OrderMinimumQuantity">
+            <summary>
+            Gets or sets the order minimum quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.OrderMaximumQuantity">
+            <summary>
+            Gets or sets the order maximum quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AllowedQuantities">
+            <summary>
+            Gets or sets the comma seperated list of allowed quantities. null or empty if any quantity is allowed
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AllowAddingOnlyExistingAttributeCombinations">
+            <summary>
+            Gets or sets a value indicating whether we allow adding to the cart/wishlist only attribute combinations that exist and have stock greater than zero.
+            This option is used only when we have "manage inventory" set to "track inventory by product attributes"
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DisableBuyButton">
+            <summary>
+            Gets or sets a value indicating whether to disable buy (Add to cart) button
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DisableWishlistButton">
+            <summary>
+            Gets or sets a value indicating whether to disable "Add to wishlist" button
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AvailableForPreOrder">
+            <summary>
+            Gets or sets a value indicating whether this item is available for Pre-Order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.PreOrderAvailabilityStartDateTimeUtc">
+            <summary>
+            Gets or sets the start date and time of the product availability (for pre-order products)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.CallForPrice">
+            <summary>
+            Gets or sets a value indicating whether to show "Call for Pricing" or "Call for quote" instead of price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Price">
+            <summary>
+            Gets or sets the price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.OldPrice">
+            <summary>
+            Gets or sets the old price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ProductCost">
+            <summary>
+            Gets or sets the product cost
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.SpecialPrice">
+            <summary>
+            Gets or sets the product special price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.SpecialPriceStartDateTimeUtc">
+            <summary>
+            Gets or sets the start date and time of the special price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.SpecialPriceEndDateTimeUtc">
+            <summary>
+            Gets or sets the end date and time of the special price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.CustomerEntersPrice">
+            <summary>
+            Gets or sets a value indicating whether a customer enters price
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MinimumCustomerEnteredPrice">
+            <summary>
+            Gets or sets the minimum price entered by a customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.MaximumCustomerEnteredPrice">
+            <summary>
+            Gets or sets the maximum price entered by a customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.BasepriceEnabled">
+            <summary>
+            Gets or sets a value indicating whether base price (PAngV) is enabled. Used by German users.
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.BasepriceAmount">
+            <summary>
+            Gets or sets an amount in product for PAngV
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.BasepriceBaseAmount">
+            <summary>
+            Gets or sets a reference amount for PAngV
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.HasTierPrices">
+            <summary>
+            Gets or sets a value indicating whether this product has tier prices configured
+            <remarks>The same as if we run this.TierPrices.Count > 0
+            We use this property for performance optimization:
+            if this property is set to false, then we do not need to load tier prices navigation property
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.HasDiscountsApplied">
+            <summary>
+            Gets or sets a value indicating whether this product has discounts applied
+            <remarks>The same as if we run this.AppliedDiscounts.Count > 0
+            We use this property for performance optimization:
+            if this property is set to false, then we do not need to load Applied Discounts navigation property
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Weight">
+            <summary>
+            Gets or sets the weight
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Length">
+            <summary>
+            Gets or sets the length
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Width">
+            <summary>
+            Gets or sets the width
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Height">
+            <summary>
+            Gets or sets the height
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AvailableStartDateTimeUtc">
+            <summary>
+            Gets or sets the available start date and time
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.AvailableEndDateTimeUtc">
+            <summary>
+            Gets or sets the available end date and time
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.DisplayOrder">
+            <summary>
+            Gets or sets a display order.
+            This value is used when sorting associated products (used with "grouped" products)
+            This value is used when sorting home page products
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Published">
+            <summary>
+            Gets or sets a value indicating whether the entity is published
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.Deleted">
+            <summary>
+            Gets or sets a value indicating whether the entity has been deleted
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of product creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.UpdatedOnUtc">
+            <summary>
+            Gets or sets the date and time of product update
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Products.ProductDto.ProductType">
+            <summary>
+            Gets or sets the product type
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.Id">
+            <summary>
+            Gets or sets the store ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.Name">
+            <summary>
+            Gets or sets the store name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.Url">
+            <summary>
+            Gets or sets the store URL
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.SslEnabled">
+            <summary>
+            Gets or sets a value indicating whether SSL is enabled
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.SecureUrl">
+            <summary>
+            Gets or sets the store secure URL (HTTPS)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.Hosts">
+            <summary>
+            Gets or sets the comma separated list of possible HTTP_HOST values
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.DefaultLanguageId">
+            <summary>
+            Gets or sets the identifier of the default language for this store; 0 is set when we use the default language display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.LanguageIds">
+            <summary>
+            Gets or sets the identifier of the language IDs for this store
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.CompanyName">
+            <summary>
+            Gets or sets the company name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.CompanyAddress">
+            <summary>
+            Gets or sets the company address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.CompanyPhoneNumber">
+            <summary>
+            Gets or sets the store phone number
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.CompanyVat">
+            <summary>
+            Gets or sets the company VAT (used in Europe Union countries)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Stores.StoreDto.PrimaryCurrencyDisplayLocale">
+            <summary>
+            Get or set the currency format
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.Id">
+            <summary>
+            Gets or sets the first name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.FirstName">
+            <summary>
+            Gets or sets the first name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.LastName">
+            <summary>
+            Gets or sets the last name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.Email">
+            <summary>
+            Gets or sets the email
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.Company">
+            <summary>
+            Gets or sets the company
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.CountryId">
+            <summary>
+            Gets or sets the country identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.CountryName">
+            <summary>
+            Gets or sets the country name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.StateProvinceId">
+            <summary>
+            Gets or sets the state/province identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.City">
+            <summary>
+            Gets or sets the city
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.Address1">
+            <summary>
+            Gets or sets the address 1
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.Address2">
+            <summary>
+            Gets or sets the address 2
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.ZipPostalCode">
+            <summary>
+            Gets or sets the zip/postal code
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.PhoneNumber">
+            <summary>
+            Gets or sets the phone number
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.FaxNumber">
+            <summary>
+            Gets or sets the fax number
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.CustomAttributes">
+            <summary>
+            Gets or sets the custom attributes (see "AddressAttribute" entity for more info)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of instance creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.AddressDto.StateProvinceName">
+            <summary>
+            Gets or sets the state/province
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductCategoryMappings.ProductCategoryMappingDto.ProductId">
+            <summary>
+            Gets or sets the product identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductCategoryMappings.ProductCategoryMappingDto.CategoryId">
+            <summary>
+            Gets or sets the category identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductCategoryMappings.ProductCategoryMappingDto.IsFeaturedProduct">
+            <summary>
+            Gets or sets a value indicating whether the product is featured
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ProductCategoryMappings.ProductCategoryMappingDto.DisplayOrder">
+            <summary>
+            Gets or sets the display order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.Id">
+            <summary>
+            Gets or sets a value indicating the order id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PickUpInStore">
+            <summary>
+            Gets or sets a value indicating whether a customer chose "pick up in store" shipping option
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PaymentMethodSystemName">
+            <summary>
+            Gets or sets the payment method system name
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomerCurrencyCode">
+            <summary>
+            Gets or sets the customer currency code (at the moment of order placing)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CurrencyRate">
+            <summary>
+            Gets or sets the currency rate
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomerTaxDisplayTypeId">
+            <summary>
+            Gets or sets the customer tax display type identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.VatNumber">
+            <summary>
+            Gets or sets the VAT number (the European Union Value Added Tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderSubtotalInclTax">
+            <summary>
+            Gets or sets the order subtotal (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderSubtotalExclTax">
+            <summary>
+            Gets or sets the order subtotal (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderSubTotalDiscountInclTax">
+            <summary>
+            Gets or sets the order subtotal discount (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderSubTotalDiscountExclTax">
+            <summary>
+            Gets or sets the order subtotal discount (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderShippingInclTax">
+            <summary>
+            Gets or sets the order shipping (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderShippingExclTax">
+            <summary>
+            Gets or sets the order shipping (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PaymentMethodAdditionalFeeInclTax">
+            <summary>
+            Gets or sets the payment method additional fee (incl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PaymentMethodAdditionalFeeExclTax">
+            <summary>
+            Gets or sets the payment method additional fee (excl tax)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.TaxRates">
+            <summary>
+            Gets or sets the tax rates
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderTax">
+            <summary>
+            Gets or sets the order tax
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderDiscount">
+            <summary>
+            Gets or sets the order discount (applied to order total)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderTotal">
+            <summary>
+            Gets or sets the order total
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.RefundedAmount">
+            <summary>
+            Gets or sets the refunded amount
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.RewardPointsWereAdded">
+            <summary>
+            Gets or sets the value indicating whether reward points were earned for this order
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CheckoutAttributeDescription">
+            <summary>
+            Gets or sets the checkout attribute description
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomerLanguageId">
+            <summary>
+            Gets or sets the customer language identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.AffiliateId">
+            <summary>
+            Gets or sets the affiliate identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomerIp">
+            <summary>
+            Gets or sets the customer IP address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.AuthorizationTransactionId">
+            <summary>
+            Gets or sets the authorization transaction identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.AuthorizationTransactionCode">
+            <summary>
+            Gets or sets the authorization transaction code
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.AuthorizationTransactionResult">
+            <summary>
+            Gets or sets the authorization transaction result
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CaptureTransactionId">
+            <summary>
+            Gets or sets the capture transaction identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CaptureTransactionResult">
+            <summary>
+            Gets or sets the capture transaction result
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.SubscriptionTransactionId">
+            <summary>
+            Gets or sets the subscription transaction identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PaidDateUtc">
+            <summary>
+            Gets or sets the paid date and time
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.ShippingMethod">
+            <summary>
+            Gets or sets the shipping method
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.ShippingRateComputationMethodSystemName">
+            <summary>
+            Gets or sets the shipping rate computation method identifier
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomValuesXml">
+            <summary>
+            Gets or sets the serialized CustomValues (values from ProcessPaymentRequest)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.Deleted">
+            <summary>
+            Gets or sets a value indicating whether the entity has been deleted
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of order creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.Customer">
+            <summary>
+            Gets or sets the customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.BillingAddress">
+            <summary>
+            Gets or sets the billing address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.ShippingAddress">
+            <summary>
+            Gets or sets the shipping address
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderItemDtos">
+            <summary>
+            Gets or sets order items
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.OrderStatus">
+            <summary>
+            Gets or sets the order status
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.PaymentStatus">
+            <summary>
+            Gets or sets the payment status
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.ShippingStatus">
+            <summary>
+            Gets or sets the shipping status
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.Orders.OrderDto.CustomerTaxDisplayType">
+            <summary>
+            Gets or sets the customer tax display type
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.Id">
+            <summary>
+            Gets or sets the id
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.Attributes">
+            <summary>
+            Gets or sets the selected attributes
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.CustomerEnteredPrice">
+            <summary>
+            Gets or sets the price enter by a customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.Quantity">
+            <summary>
+            Gets or sets the quantity
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.RentalStartDateUtc">
+            <summary>
+            Gets or sets the rental product start date (null if it's not a rental product)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.RentalEndDateUtc">
+            <summary>
+            Gets or sets the rental product end date (null if it's not a rental product)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.CreatedOnUtc">
+            <summary>
+            Gets or sets the date and time of instance creation
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.UpdatedOnUtc">
+            <summary>
+            Gets or sets the date and time of instance update
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.ShoppingCartType">
+            <summary>
+            Gets the log type
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.ProductDto">
+            <summary>
+            Gets or sets the product
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.DTOs.ShoppingCarts.ShoppingCartItemDto.CustomerDto">
+            <summary>
+            Gets or sets the customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.Fields">
+            <summary>
+            Comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.CreatedAtMin">
+            <summary>
+            Show news letter subscriptions created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.CreatedAtMax">
+            <summary>
+            Show news letter subscriptions created before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.NewsLetterSubscriptionsParametersModel.OnlyActive">
+            <summary>
+            Whether should return only active news letter subscriptions
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.Fields">
+            <summary>
+            Comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.CreatedAtMin">
+            <summary>
+            Show customers created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersParametersModel.CreatedAtMax">
+            <summary>
+            Show customers created before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel.Order">
+            <summary>
+            Field and direction to order results by (default: id DESC)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel.Query">
+            <summary>
+            Text to search customers
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CustomersParameters.CustomersSearchParametersModel.Fields">
+            <summary>
+            Comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel.Ids">
+            <summary>
+            A comma-separated list of category ids
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductAttributes.ProductAttributesParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.CreatedAtMin">
+            <summary>
+            Show categories created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.CreatedAtMax">
+            <summary>
+            Show categories created before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.UpdatedAtMin">
+            <summary>
+            Show categories last updated after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.UpdatedAtMax">
+            <summary>
+            Show categories last updated before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.PublishedStatus">
+            <summary>
+            <ul>
+            <li>published - Show only published categories</li>
+            <li>unpublished - Show only unpublished categories</li>
+            <li>any - Show all categories(default)</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.BaseCategoriesParametersModel.ProductId">
+            <summary>
+            Show only the categories to which the product is mapped to
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel.Ids">
+            <summary>
+            A comma-separated list of category ids
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.CategoriesParameters.CategoriesParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.BaseCategoryMappingsParametersModel.ProductId">
+            <summary>
+            Show all the product-category mappings for this product
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.BaseCategoryMappingsParametersModel.CategoryId">
+            <summary>
+            Show all the product-category mappings for this category
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductCategoryMappingsParameters.ProductCategoryMappingsParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.CreatedAtMin">
+            <summary>
+            Show orders created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.CreatedAtMax">
+            <summary>
+            Show orders created before date(format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.Status">
+            <summary>
+            <ul>
+            <li>pending - All open orders (default)</li>
+            <li>processing - Show only payed or shipped orders</li>
+            <li>complete - Show only the complete orders</li>
+            <li>cancelled - Show only cancelled orders</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.PaymentStatus">
+            <summary>
+            <ul>
+            <li>pending - Show all orders that are not payed</li>
+            <li>authorized - Show all orders that are authorized by the payment provider</li>
+            <li>paid - Show the paid orders</li>
+            <li>partiallyRefunded - Show only the partially refunded orders</li>
+            <li>refunded - Show only the refunded orders</li>
+            <li>voided - Show only the voided orders</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.ShippingStatus">
+            <summary>
+            <ul>
+            <li>shippingNotRequired - Show only the orders that do not require shipping</li>
+            <li>notYetShipped - Show only the orders that are not shipped</li>
+            <li>partiallyShipped - Show only the orders that are partially shippied</li>
+            <li>shipped - Show only the shipped orders</li>
+            <li>delivered - Show only the delivered orders</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.BaseOrdersParametersModel.CustomerId">
+            <summary>
+            Show all the orders for this customer
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel.Ids">
+            <summary>
+            A comma-separated list of order ids
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.OrdersParameters.OrdersParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.CreatedAtMin">
+            <summary>
+            Show products created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.CreatedAtMax">
+            <summary>
+            Show products created before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.UpdatedAtMin">
+            <summary>
+            Show products last updated after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.UpdatedAtMax">
+            <summary>
+            Show products last updated before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.PublishedStatus">
+            <summary>
+            <ul>
+            <li>published - Show only published products</li>
+            <li>unpublished - Show only unpublished products</li>
+            <li>any - Show all products (default)</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.VendorName">
+            <summary>
+            Filter by product vendor
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.BaseProductsParametersModel.CategoryId">
+            <summary>
+            Show only the products mapped to the specified category
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel.Ids">
+            <summary>
+            A comma-separated list of order ids
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel.SinceId">
+            <summary>
+            Restrict results to after the specified ID
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ProductsParameters.ProductsParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.CreatedAtMin">
+            <summary>
+            Show shopping cart items created after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.CreatedAtMax">
+            <summary>
+            Show shopping cart items created before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.UpdatedAtMin">
+            <summary>
+            Show shopping cart items updated after date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.UpdatedAtMax">
+            <summary>
+            Show shopping cart items updated before date (format: 2008-12-31 03:00)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.Limit">
+            <summary>
+            Amount of results (default: 50) (maximum: 250)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.Page">
+            <summary>
+            Page to show (default: 1)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Models.ShoppingCartsParameters.BaseShoppingCartItemsParametersModel.Fields">
+            <summary>
+            comma-separated list of fields to include in the response
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Data.ApiObjectContext.Install">
+            <summary>
+            Install
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Data.ApiObjectContext.Uninstall">
+            <summary>
+            Uninstall
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Data.ApiObjectContext.ProxyCreationEnabled">
+            <summary>
+            Gets or sets a value indicating whether proxy creation setting is enabled (used in EF)
+            </summary>
+        </member>
+        <member name="P:Nop.Plugin.Api.Data.ApiObjectContext.AutoDetectChangesEnabled">
+            <summary>
+            Gets or sets a value indicating whether auto detect changes setting is enabled (used in EF)
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Converters.ApiTypeConverter.ToUtcDateTimeNullable(System.String)">
+            <summary>
+            Converts the value, which should be in ISO 8601 format to UTC time or null if not valid
+            </summary>
+            <param name="value">The time format in ISO 8601. If no timezone or offset specified we assume it is in UTC</param>
+            <returns>The time in UTC or null if the time is not valid</returns>
+        </member>
+        <member name="T:Nop.Plugin.Api.Owin.Middleware.BearerTokenMiddleware">
+            <summary>
+            Our own middleware that resets the current user set by the Forms authentication in case we have a Bearer token request
+            This way we can have the OAuthBearerAuthenticationMiddleware to work properly
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.Services.CustomerApiService.HandleCustomerGenericAttributes(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.IQueryable{Nop.Core.Domain.Customers.Customer},System.Int32,System.Int32,System.String)">
+            <summary>
+            The idea of this method is to get the first and last name from the GenericAttribute table and to set them in the CustomerDto object.
+            </summary>
+            <param name="searchParams">Search parameters is used to shrinc the range of results from the GenericAttibutes table 
+            to be only those with specific search parameter (i.e. currently we focus only on first and last name).</param>
+            <param name="query">Query parameter represents the current customer records which we will join with GenericAttributes table.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nop.Plugin.Api.Services.CustomerApiService.GetFullCustomerDtos(System.Linq.IQueryable{System.Linq.IGrouping{System.Int32,Nop.Plugin.Api.DTOs.Customers.CustomerAttributeMappingDto}},System.Int32,System.Int32,System.String)">
+            <summary>
+            This method is responsible for getting customer dto records with first and last names set from the attribute mappings.
+            </summary>
+        </member>
+        <member name="M:Nop.Plugin.Api.WebHooks.ApiWebHookSender.CreateWebHookRequestBody(Microsoft.AspNet.WebHooks.WebHookWorkItem)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

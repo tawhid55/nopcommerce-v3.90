@@ -112,8 +112,10 @@ namespace Nop.Web.Framework
                 }
                 else
                 {
-                    int cookieExpires = 24*365; //TODO make configurable
-                    cookie.Expires = DateTime.Now.AddHours(cookieExpires);
+                    //int cookieExpires = 24*365; //TODO make configurable
+                    //int cookieExpires = 10;
+                    //cookie.Expires = DateTime.Now.AddHours(cookieExpires);
+                    cookie.Expires = DateTime.Now.AddMinutes(10);
                 }
 
                 _httpContext.Response.Cookies.Remove(CustomerCookieName);
